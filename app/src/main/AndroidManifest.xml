@@ -38,6 +38,13 @@
             android:label="@string/dashboard_title"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- Activity Statistiques & Analyse -->
+        <activity
+            android:name=".StatisticsActivity"
+            android:exported="false"
+            android:label="Analyse &amp; Statistiques"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

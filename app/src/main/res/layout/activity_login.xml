@@ -159,19 +159,6 @@
                     app:backgroundTint="@color/primary"
                     app:cornerRadius="12dp" />
 
-                <!-- Quick Demo Login Button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_demo_login"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/btn_demo_login"
-                    android:textColor="@color/primary"
-                    android:textSize="14sp"
-                    app:cornerRadius="12dp"
-                    app:strokeColor="@color/primary" />
-
                 <!-- Link to Register -->
                 <TextView
                     android:id="@+id/tv_go_to_register"

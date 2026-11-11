@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextInputLayout tilEmail, tilPassword;
     private TextInputEditText etEmail, etPassword;
-    private MaterialButton btnLogin, btnDemoLogin;
+    private MaterialButton btnLogin;
     private TextView tvGoToRegister;
 
     private DatabaseHelper databaseHelper;
@@ -62,18 +62,11 @@ public class LoginActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         btnLogin = findViewById(R.id.btn_login);
-        btnDemoLogin = findViewById(R.id.btn_demo_login);
         tvGoToRegister = findViewById(R.id.tv_go_to_register);
     }
 
     private void setupListeners() {
         btnLogin.setOnClickListener(v -> handleLogin());
-
-        btnDemoLogin.setOnClickListener(v -> {
-            etEmail.setText("etudiant@test.com");
-            etPassword.setText("123456");
-            handleLogin();
-        });
 
         tvGoToRegister.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
@@ -112,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         User user = databaseHelper.checkUserCredentials(email, password);
 
         if (user != null) {
-            // Connexion réussie -> Enregistrer la session avec l'ID utilisateur
+            // Connexion réussie -> Enregistrer la session
             sessionManager.createLoginSession(user.getId(), user.getEmail(), user.getFullName());
 
             Toast.makeText(this, "Connexion réussie ! Bienvenue " + user.getFullName() + " 👋", Toast.LENGTH_SHORT).show();

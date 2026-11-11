@@ -77,48 +77,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "FOREIGN KEY(" + COLUMN_BUDGET_USER_ID + ") REFERENCES " + TABLE_USERS + "(" + COLUMN_USER_ID + ")"
                 + ")";
         db.execSQL(CREATE_BUDGETS_TABLE);
-
-        // Insertion du compte de démonstration par défaut
-        ContentValues demoUser = new ContentValues();
-        demoUser.put(COLUMN_USER_NAME, "Étudiant Démo");
-        demoUser.put(COLUMN_USER_EMAIL, "etudiant@test.com");
-        demoUser.put(COLUMN_USER_PASSWORD, PasswordUtils.hashPassword("123456"));
-        long demoUserId = db.insert(TABLE_USERS, null, demoUser);
-
-        if (demoUserId != -1) {
-            insertInitialSampleExpenses(db, (int) demoUserId);
-        }
-    }
-
-    private void insertInitialSampleExpenses(SQLiteDatabase db, int userId) {
-        ContentValues e1 = new ContentValues();
-        e1.put(COLUMN_EXPENSE_USER_ID, userId);
-        e1.put(COLUMN_EXPENSE_AMOUNT, 12.50);
-        e1.put(COLUMN_EXPENSE_CATEGORY, "🍔 Repas / Resto");
-        e1.put(COLUMN_EXPENSE_NOTE, "Menu étudiant Crous / Fast food");
-        e1.put(COLUMN_EXPENSE_DATE, "Aujourd'hui");
-        db.insert(TABLE_EXPENSES, null, e1);
-
-        ContentValues e2 = new ContentValues();
-        e2.put(COLUMN_EXPENSE_USER_ID, userId);
-        e2.put(COLUMN_EXPENSE_AMOUNT, 24.00);
-        e2.put(COLUMN_EXPENSE_CATEGORY, "🚌 Transports");
-        e2.put(COLUMN_EXPENSE_NOTE, "Recharge carte Navigo / Bus");
-        e2.put(COLUMN_EXPENSE_DATE, "Hier");
-        db.insert(TABLE_EXPENSES, null, e2);
-
-        ContentValues e3 = new ContentValues();
-        e3.put(COLUMN_EXPENSE_USER_ID, userId);
-        e3.put(COLUMN_EXPENSE_AMOUNT, 18.00);
-        e3.put(COLUMN_EXPENSE_CATEGORY, "🍻 Soirées & Loisirs");
-        e3.put(COLUMN_EXPENSE_NOTE, "Verre entre amis");
-        e3.put(COLUMN_EXPENSE_DATE, "Il y a 2 jours");
-        db.insert(TABLE_EXPENSES, null, e3);
-
-        ContentValues b1 = new ContentValues();
-        b1.put(COLUMN_BUDGET_USER_ID, userId);
-        b1.put(COLUMN_BUDGET_WEEKLY_LIMIT, 100.00);
-        db.insert(TABLE_BUDGETS, null, b1);
     }
 
     @Override

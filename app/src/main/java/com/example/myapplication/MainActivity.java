@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements ExpenseAdapter.On
     private ImageButton btnLogoutHeader;
     private ProgressBar progressBarBudget;
     private MaterialCardView cardAlert;
-    private MaterialButton btnAddExpense, btnSetBudget, btnCompleteChallenge;
+    private MaterialButton btnAddExpense, btnSetBudget, btnViewStats, btnCompleteChallenge;
     private RecyclerView rvExpenses;
 
     private SessionManager sessionManager;
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements ExpenseAdapter.On
 
         btnAddExpense = findViewById(R.id.btn_add_expense);
         btnSetBudget = findViewById(R.id.btn_set_budget);
+        btnViewStats = findViewById(R.id.btn_view_stats);
         btnCompleteChallenge = findViewById(R.id.btn_complete_challenge);
 
         rvExpenses = findViewById(R.id.rv_expenses);
@@ -110,6 +111,10 @@ public class MainActivity extends AppCompatActivity implements ExpenseAdapter.On
         btnLogoutHeader.setOnClickListener(v -> performLogout());
         btnAddExpense.setOnClickListener(v -> showAddExpenseDialog());
         btnSetBudget.setOnClickListener(v -> showSetBudgetDialog());
+        btnViewStats.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, StatisticsActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        });
         btnCompleteChallenge.setOnClickListener(v -> toggleChallenge());
     }
 
