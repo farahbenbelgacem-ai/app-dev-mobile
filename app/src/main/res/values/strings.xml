@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WhereDidItGo?</string>
+    <string name="app_tagline">Où passe mon argent ? 💸</string>
+    <string name="app_subtitle">Gère tes dépenses d\'étudiant en toute simplicité</string>
+
+    <string name="title_login">Connexion</string>
+    <string name="subtitle_login">Bon retour parmi nous ! Connecte-toi à ton compte.</string>
+    <string name="title_register">Inscription</string>
+    <string name="subtitle_register">Rejoins WhereDidItGo? et prends le contrôle de ton budget.</string>
+
+    <string name="hint_full_name">Nom complet (ex: Jean Dupont)</string>
+    <string name="hint_email">Adresse e-mail étudiant</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="hint_confirm_password">Confirmer le mot de passe</string>
+
+    <string name="btn_login">Se connecter</string>
+    <string name="btn_demo_login">⚡ Connexion rapide (Compte Démo)</string>
+    <string name="btn_register">Créer mon compte</string>
+    <string name="link_to_register">Pas encore de compte ? Inscris-toi ici !</string>
+    <string name="link_to_login">Déjà un compte ? Connecte-toi ici !</string>
+    <string name="demo_account_hint">Compte test : etudiant@test.com / 123456</string>
+
+    <string name="error_empty_fields">Veuillez remplir tous les champs obligatoires.</string>
+    <string name="error_invalid_email">Veuillez entrer une adresse e-mail valide.</string>
+    <string name="error_passwords_dont_match">Les mots de passe ne correspondent pas.</string>
+    <string name="error_password_too_short">Le mot de passe doit contenir au moins 6 caractères.</string>
+    <string name="error_email_exists">Un compte existe déjà avec cette adresse e-mail.</string>
+    <string name="error_login_failed">Adresse e-mail ou mot de passe incorrect.</string>
+
+    <string name="success_register">Compte créé avec succès ! Connecte-toi maintenant.</string>
+
+    <string name="welcome_student">Bienvenue, %1$s ! 👋</string>
+    <string name="dashboard_title">Tableau de bord étudiant</string>
+    <string name="dashboard_subtitle">WhereDidItGo? - Ton espace financier</string>
+    <string name="btn_logout">Se déconnecter</string>
+
+    <!-- App concept features description on Home screen -->
+    <string name="feature_budget_title">🎯 Budget Hebdomadaire</string>
+    <string name="feature_budget_desc">Fixe une limite et reçois une alerte avant de dépasser ton budget.</string>
+
+    <string name="feature_category_title">🍔 Catégories Étudiantes</string>
+    <string name="feature_category_desc">Repas, fast-food, soirées, cours, transports &amp; abonnements.</string>
+
+    <string name="feature_challenge_title">⚡ Défi de la semaine</string>
+    <string name="feature_challenge_desc">Réduire les commandes de livraison de -50% cette semaine !</string>
+
+    <string name="db_status">Base de données SQLite : Opérationnelle 🟢</string>
+</resources>
